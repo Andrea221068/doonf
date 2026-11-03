@@ -309,37 +309,90 @@ function doonfSpain() {
     areas += '<path data-fill="' + fill + '" d="' + d + '"></path>';
     lines += '<path d="' + d + '"></path>';
   }
+  function ink(d) {
+    lines += '<path d="' + d + '"></path>';
+  }
+  function pillar(cx) {
+    add("white",
+      "M" + (cx - 18) + " 214 H" + (cx + 18) + " V230 H" + (cx - 18) + " Z " +
+      "M" + (cx - 10) + " 92 H" + (cx + 10) + " V214 H" + (cx - 10) + " Z " +
+      "M" + (cx - 18) + " 74 H" + (cx + 18) + " V98 H" + (cx - 18) + " Z"
+    );
+  }
+  function ribbon(x0, x1, y) {
+    add("spain-red",
+      "M" + x0 + " " + (y - 6) +
+      " C" + (x0 + 24) + " " + (y - 24) + " " + (x1 - 28) + " " + (y + 10) + " " + x1 + " " + (y - 8) +
+      " L" + x1 + " " + (y + 8) +
+      " C" + (x1 - 24) + " " + (y + 22) + " " + (x0 + 22) + " " + (y - 8) + " " + x0 + " " + (y + 10) +
+      " Z"
+    );
+  }
 
-  add("gold", "M148 214 H128 V78 H148 V68 H108 V78 H118 V230 H108 V240 H168 V230 H158 V214 Z");
-  add("gold", "M302 214 H322 V78 H302 V68 H342 V78 H332 V230 H342 V240 H282 V230 H292 V214 Z");
-  add("spain-red", "M118 150 H158 V168 H118 Z");
-  add("spain-red", "M292 150 H332 V168 H292 Z");
+  pillar(112);
+  pillar(338);
+  ribbon(62, 158, 154);
+  ribbon(292, 388, 154);
 
-  add("spain-red", "M170 82 H280 V188 Q280 230 225 252 Q170 230 170 188 Z");
-  add("gold", "M176 88 H222 V146 H176 Z");
-  add("white", "M228 88 H274 V146 H228 Z");
-  add("gold", "M176 152 H222 V198 H176 Z");
-  add("spain-red", "M228 152 H274 V198 H228 Z");
-  add("white", "M196 198 H254 L225 246 Z");
+  add("spain-red", "M164 84 H286 V168 H164 Z");
+  add("white", "M225 84 H286 V168 H225 Z");
+  add("white", "M164 196 H286 Q286 232 225 262 Q164 232 164 196 Z");
+  add("gold", "M164 168 H225 V200 H164 Z");
+  add("spain-red", "M225 168 H286 V200 H225 Z");
+  ink("M164 84 H286 V176 Q286 232 225 262 Q164 232 164 176 Z");
+  ink("M225 84 V196");
+  ink("M164 168 H286");
 
-  add("gold", "M182 138 H196 V118 H182 Z M184 118 H188 V112 H192 V118 H196 V112 H190 V108 H184 Z M196 138 H210 V104 H196 Z M198 104 H202 V98 H206 V104 H210 V98 H204 V94 H198 Z M210 138 H220 V118 H210 Z M212 118 H216 V112 H220 V118 H218 V112 H212 Z M200 128 H206 V138 H200 Z");
-  add("purple", "M246 140 C242 128 236 124 234 116 C232 108 238 104 236 96 C240 90 250 92 252 98 C256 92 266 94 264 102 C270 98 274 108 268 114 C274 120 270 128 262 126 C266 134 258 140 252 136 C248 142 246 140 246 140 Z");
-  [184, 194, 206, 216].forEach(function (x) {
-    add("spain-red", "M" + x + " 156 H" + (x + 6) + " V194 H" + x + " Z");
+  add("gold",
+    "M176 160 V132 H170 V124 H178 V132 H186 V112 H180 V104 H188 V112 H196 V92 H190 V84 H206 V92 H214 V104 H208 V112 H216 V132 H224 V124 H232 V132 H226 V160 Z " +
+    "M196 160 V142 H208 V160 Z " +
+    "M198 118 H206 V128 H198 Z " +
+    "M176 140 H184 V150 H176 Z " +
+    "M216 140 H224 V150 H216 Z"
+  );
+  add("purple",
+    "M268 162 L262 146 L274 150 L258 132 L278 116 " +
+    "C288 102 276 88 264 96 L272 84 L258 98 L252 112 " +
+    "L236 100 L246 114 L230 108 L248 122 L236 116 " +
+    "C228 108 238 96 250 102 L232 92 L226 98 L238 104 " +
+    "L246 96 L252 86 L260 98 L266 90 L258 108 L268 116 " +
+    "L260 132 L270 140 L262 162 Z"
+  );
+  [172, 184, 196, 208].forEach(function (x) {
+    add("spain-red", "M" + x + " 172 H" + (x + 8) + " V196 H" + x + " Z");
   });
-  add("gold", "M251 175 m -16 0 a 16 16 0 1 0 32 0 a 16 16 0 1 0 -32 0");
-  add("gold", "M251 175 m -4 0 a 4 4 0 1 0 8 0 a 4 4 0 1 0 -8 0");
-  add("leaf", "M214 214 h22 v16 h-22 Z M210 210 h30 v8 h-30 Z");
-  add("azure", "M225 148 m -20 0 a 20 26 0 1 0 40 0 a 20 26 0 1 0 -40 0");
-  add("gold", doonfFleur(225, 132, 12));
-  add("gold", doonfFleur(214, 156, 10));
-  add("gold", doonfFleur(236, 156, 10));
+  add("gold", (function () {
+    var cx = 255;
+    var cy = 184;
+    var d = "M" + (cx - 4) + " " + cy + " a 4 4 0 1 0 8 0 a 4 4 0 1 0 -8 0 ";
+    for (var i = 0; i < 8; i++) {
+      var a = (i * Math.PI) / 4;
+      var x = cx + 14 * Math.cos(a);
+      var y = cy + 12 * Math.sin(a);
+      d += "M" + doonfNum(x) + " " + doonfNum(y) + " m -4 0 a 4 4 0 1 0 8 0 a 4 4 0 1 0 -8 0 ";
+      d += "M" + doonfNum(cx + 5 * Math.cos(a)) + " " + doonfNum(cy + 5 * Math.sin(a));
+      d += " L" + doonfNum(x) + " " + doonfNum(y) + " ";
+    }
+    return d;
+  })());
+  add("leaf", "M214 214 Q225 198 236 214 Q230 206 225 204 Q220 206 214 214 Z");
+  add("spain-red", "M213 230 a 12 14 0 1 0 24 0 a 12 14 0 1 0 -24 0");
+  add("gold", "M221 214 H229 V206 H221 Z");
+  add("azure", "M225 158 m -22 0 a 22 30 0 1 0 44 0 a 22 30 0 1 0 -44 0");
+  add("gold", doonfFleur(225, 142, 11));
+  add("gold", doonfFleur(214, 166, 9));
+  add("gold", doonfFleur(236, 166, 9));
 
-  add("gold", "M188 78 H262 V68 H248 V58 H236 V48 H250 V40 H236 V32 H214 V40 H228 V48 H214 V58 H202 V68 H188 Z");
-  add("gold", "M214 18 H236 V32 H214 Z");
-
-  lines += '<path d="M225 88 V198"></path>';
-  lines += '<path d="M176 147 H274"></path>';
+  add("gold",
+    "M184 84 H266 V72 L258 66 Q250 46 240 44 L246 36 L236 30 L246 24 L225 12 L204 24 L214 30 L204 36 L210 44 Q200 46 192 66 L184 72 Z"
+  );
+  add("gold", "M217 2 H233 V12 H243 V22 H233 V30 H217 V22 H207 V12 H217 Z");
+  ink("M196 74 Q212 44 225 38");
+  ink("M254 74 Q238 44 225 38");
+  ink("M225 76 V38");
+  [198, 212, 225, 238, 252].forEach(function (x) {
+    add("spain-red", "M" + (x - 3) + " 73 a 3 3 0 1 0 6 0 a 3 3 0 1 0 -6 0");
+  });
 
   return doonfFlagRecord("0 0 450 300", areas, lines);
 }
