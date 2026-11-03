@@ -688,19 +688,115 @@ function doonfLiechtenstein() {
   return bag.done("0 0 500 300");
 }
 
+function doonfQuad(p0, p1, p2, n) {
+  var pts = [];
+  for (var i = 0; i <= n; i++) {
+    var t = i / n;
+    var u = 1 - t;
+    pts.push({
+      x: u * u * p0.x + 2 * u * t * p1.x + t * t * p2.x,
+      y: u * u * p0.y + 2 * u * t * p1.y + t * t * p2.y
+    });
+  }
+  return pts;
+}
+
+function doonfRibbon(pts, width) {
+  var left = [];
+  var right = [];
+  for (var i = 0; i < pts.length; i++) {
+    var prev = pts[Math.max(0, i - 1)];
+    var next = pts[Math.min(pts.length - 1, i + 1)];
+    var len = Math.hypot(next.x - prev.x, next.y - prev.y) || 1;
+    var ox = (-(next.y - prev.y) / len) * width;
+    var oy = ((next.x - prev.x) / len) * width;
+    left.push({ x: pts[i].x + ox, y: pts[i].y + oy });
+    right.push({ x: pts[i].x - ox, y: pts[i].y - oy });
+  }
+  return doonfPoly(left.concat(right.reverse()));
+}
+
+function doonfLeaf(x, y, angle, len, width) {
+  var c = Math.cos(angle);
+  var s = Math.sin(angle);
+  var hx = c * len / 2;
+  var hy = s * len / 2;
+  return "M" + doonfNum(x - hx) + " " + doonfNum(y - hy) +
+    " Q" + doonfNum(x - s * width) + " " + doonfNum(y + c * width) +
+    " " + doonfNum(x + hx) + " " + doonfNum(y + hy) +
+    " Q" + doonfNum(x + s * width) + " " + doonfNum(y - c * width) +
+    " " + doonfNum(x - hx) + " " + doonfNum(y - hy) + " Z";
+}
+
+function doonfOlive(bag, from, bend, to, side) {
+  var stem = doonfQuad(from, bend, to, 28);
+  bag.draw("cy-green", doonfRibbon(stem, 2.2));
+  stem.forEach(function (pt, i) {
+    if (i < 3 || i > 18 || i % 3 !== 0) return;
+    var prev = stem[i - 1];
+    var next = stem[i + 1];
+    var tangent = Math.atan2(next.y - prev.y, next.x - prev.x);
+    var normal = tangent + side * Math.PI / 2;
+    var cx = pt.x + Math.cos(normal) * 18;
+    var cy = pt.y + Math.sin(normal) * 18;
+    bag.draw("cy-green", doonfLeaf(cx, cy, normal, 36, 12));
+    if (i < 18) {
+      var back = tangent - side * Math.PI / 2;
+      bag.draw("cy-green", doonfLeaf(
+        pt.x + Math.cos(back) * 12,
+        pt.y + Math.sin(back) * 12,
+        back,
+        22,
+        7
+      ));
+    }
+  });
+}
+
+function doonfSmooth(pts) {
+  var n = pts.length;
+  var d = "M" + doonfNum(pts[0].x) + " " + doonfNum(pts[0].y);
+  for (var i = 0; i < n; i++) {
+    var p0 = pts[(i - 1 + n) % n];
+    var p1 = pts[i];
+    var p2 = pts[(i + 1) % n];
+    var p3 = pts[(i + 2) % n];
+    d += " C" +
+      doonfNum(p1.x + (p2.x - p0.x) / 8) + " " + doonfNum(p1.y + (p2.y - p0.y) / 8) + " " +
+      doonfNum(p2.x - (p3.x - p1.x) / 8) + " " + doonfNum(p2.y - (p3.y - p1.y) / 8) + " " +
+      doonfNum(p2.x) + " " + doonfNum(p2.y);
+  }
+  return d + " Z";
+}
+
 function doonfCyprus() {
   var bag = doonfBag();
   bag.rect("white", 0, 0, 900, 600);
-  bag.draw("cy-copper", "M250 250 C280 180 340 160 390 175 C430 150 500 145 560 170 C640 150 700 175 760 230 C700 250 660 300 620 330 C560 370 480 390 420 360 C360 390 300 370 270 330 C230 340 210 300 250 250 Z");
-  bag.draw("cy-green", "M300 430 Q450 390 600 430");
-  bag.draw("cy-green", "M320 455 Q450 415 580 455");
-  for (var i = 0; i < 7; i++) {
-    var t = i / 6;
-    var x = 310 + t * 280;
-    var y = 430 - Math.sin(t * Math.PI) * 28;
-    bag.draw("cy-green", "M" + doonfNum(x) + " " + doonfNum(y) + " l8 -14 l8 14 Z");
-    bag.draw("cy-green", "M" + doonfNum(x) + " " + doonfNum(y + 24) + " l8 14 l8 -14 Z");
-  }
+  bag.draw("cy-copper", doonfSmooth([
+    { x: 255, y: 252 },
+    { x: 278, y: 218 },
+    { x: 318, y: 198 },
+    { x: 368, y: 188 },
+    { x: 412, y: 206 },
+    { x: 458, y: 192 },
+    { x: 508, y: 182 },
+    { x: 558, y: 170 },
+    { x: 608, y: 156 },
+    { x: 652, y: 146 },
+    { x: 632, y: 168 },
+    { x: 588, y: 188 },
+    { x: 548, y: 210 },
+    { x: 528, y: 238 },
+    { x: 552, y: 264 },
+    { x: 530, y: 286 },
+    { x: 478, y: 300 },
+    { x: 418, y: 306 },
+    { x: 358, y: 298 },
+    { x: 308, y: 278 },
+    { x: 272, y: 262 }
+  ]));
+  doonfOlive(bag, { x: 286, y: 392 }, { x: 348, y: 470 }, { x: 478, y: 512 }, -1);
+  doonfOlive(bag, { x: 614, y: 392 }, { x: 552, y: 470 }, { x: 422, y: 512 }, 1);
   bag.box(900, 600);
   return bag.done("0 0 900 600");
 }
