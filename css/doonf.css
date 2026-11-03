@@ -59,6 +59,26 @@ a {
   color: #57534e;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 0 0;
+}
+
+.filters a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.filters a[aria-current="true"] {
+  background: #1c1917;
+  color: #fff;
+}
+
 .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

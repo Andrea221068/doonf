@@ -25,12 +25,18 @@ function doonfSvg(flagId, mode, label) {
   return holder.firstChild;
 }
 
-function doonfChrome(lang, currentHref, otherHref) {
+function doonfKnownContinent(lang, id) {
+  return doonfText(lang).continents.some(function (item) {
+    return item.id === id;
+  });
+}
+
+function doonfChrome(lang, currentHref, otherHref, homeHref) {
   var bar = document.createElement("header");
   bar.className = "chrome top";
   var brand = document.createElement("a");
   brand.className = "brand";
-  brand.href = "index.html";
+  brand.href = homeHref || "index.html";
   brand.textContent = "Doonf";
   var langs = document.createElement("nav");
   langs.className = "langs";
@@ -50,8 +56,9 @@ function doonfHome(lang) {
   var text = doonfText(lang);
   document.title = text.homeTitle;
   document.documentElement.lang = text.htmlLang;
-  var other = lang === "it" ? "../en/index.html" : "../it/index.html";
-  document.body.appendChild(doonfChrome(lang, "index.html", other));
+  var otherBase = lang === "it" ? "../en/index.html" : "../it/index.html";
+  var bar = doonfChrome(lang, "index.html", otherBase);
+  document.body.appendChild(bar);
 
   var intro = document.createElement("p");
   intro.className = "chrome intro";
@@ -59,28 +66,66 @@ function doonfHome(lang) {
   var note = document.createElement("p");
   note.className = "chrome note";
   note.textContent = text.note;
-  document.body.appendChild(intro);
-  document.body.appendChild(note);
-
+  var filters = document.createElement("nav");
+  filters.className = "chrome filters";
+  var empty = document.createElement("p");
+  empty.className = "chrome note";
+  empty.textContent = text.empty;
   var list = document.createElement("div");
   list.className = "chrome catalog";
-  doonfOrdered(lang).forEach(function (country) {
-    var card = document.createElement("a");
-    card.className = "card";
-    card.href = country.slug[lang] + ".html";
-    var mini = document.createElement("div");
-    mini.className = "mini";
-    mini.appendChild(doonfSvg(country.flag, "color", country.name[lang]));
-    var title = document.createElement("h2");
-    title.textContent = country.name[lang];
-    var facts = document.createElement("p");
-    facts.textContent = doonfFacts(country, lang);
-    card.appendChild(mini);
-    card.appendChild(title);
-    card.appendChild(facts);
-    list.appendChild(card);
-  });
+  document.body.appendChild(intro);
+  document.body.appendChild(note);
+  document.body.appendChild(filters);
+  document.body.appendChild(empty);
   document.body.appendChild(list);
+
+  function selectedId() {
+    var id = (location.hash || "").replace(/^#/, "");
+    return doonfKnownContinent(lang, id) ? id : "";
+  }
+
+  function render() {
+    var selected = selectedId();
+    var suffix = selected ? "#" + selected : "";
+    bar.querySelectorAll(".langs a").forEach(function (link) {
+      var code = link.textContent.toLowerCase();
+      link.href = (code === lang ? "index.html" : otherBase) + suffix;
+    });
+    filters.textContent = "";
+    list.textContent = "";
+    [{ id: "all", name: text.all }].concat(text.continents).forEach(function (item) {
+      var link = document.createElement("a");
+      link.href = item.id === "all" ? "#all" : "#" + item.id;
+      link.textContent = item.name;
+      if ((item.id === "all" && !selected) || item.id === selected) {
+        link.setAttribute("aria-current", "true");
+      }
+      filters.appendChild(link);
+    });
+    var countries = doonfOrdered(lang).filter(function (country) {
+      return !selected || country.continentId === selected;
+    });
+    empty.hidden = countries.length > 0;
+    countries.forEach(function (country) {
+      var card = document.createElement("a");
+      card.className = "card";
+      card.href = country.slug[lang] + ".html" + (selected ? "?c=" + selected : "");
+      var mini = document.createElement("div");
+      mini.className = "mini";
+      mini.appendChild(doonfSvg(country.flag, "color", country.name[lang]));
+      var title = document.createElement("h2");
+      title.textContent = country.name[lang];
+      var facts = document.createElement("p");
+      facts.textContent = doonfFacts(country, lang);
+      card.appendChild(mini);
+      card.appendChild(title);
+      card.appendChild(facts);
+      list.appendChild(card);
+    });
+  }
+
+  window.addEventListener("hashchange", render);
+  render();
 }
 
 function doonfSheet(lang, id) {
@@ -88,20 +133,32 @@ function doonfSheet(lang, id) {
   var country = DOONF_COUNTRIES.filter(function (item) {
     return item.id === id;
   })[0];
+  var continentId = new URLSearchParams(location.search).get("c") || "";
+  if (!doonfKnownContinent(lang, continentId)) continentId = "";
   var order = doonfOrdered(lang);
+  if (continentId) {
+    var narrowed = order.filter(function (item) {
+      return item.continentId === continentId;
+    });
+    if (narrowed.some(function (item) { return item.id === id; })) order = narrowed;
+    else continentId = "";
+  }
   var index = order.findIndex(function (item) {
     return item.id === id;
   });
   var previous = order[(index + order.length - 1) % order.length];
   var next = order[(index + 1) % order.length];
   var otherLang = lang === "it" ? "en" : "it";
+  var query = continentId ? "?c=" + continentId : "";
+  var home = "index.html" + (continentId ? "#" + continentId : "");
 
   document.title = country.name[lang] + " " + text.sheetTitle;
   document.documentElement.lang = text.htmlLang;
   document.body.appendChild(doonfChrome(
     lang,
-    country.slug[lang] + ".html",
-    "../" + otherLang + "/" + country.slug[otherLang] + ".html"
+    country.slug[lang] + ".html" + query,
+    "../" + otherLang + "/" + country.slug[otherLang] + ".html" + query,
+    home
   ));
 
   var wrap = document.createElement("main");
@@ -110,10 +167,10 @@ function doonfSheet(lang, id) {
   var pager = document.createElement("nav");
   pager.className = "chrome pager";
   var prevLink = document.createElement("a");
-  prevLink.href = previous.slug[lang] + ".html";
+  prevLink.href = previous.slug[lang] + ".html" + query;
   prevLink.textContent = "← " + previous.name[lang];
   var nextLink = document.createElement("a");
-  nextLink.href = next.slug[lang] + ".html";
+  nextLink.href = next.slug[lang] + ".html" + query;
   nextLink.textContent = next.name[lang] + " →";
   pager.appendChild(prevLink);
   pager.appendChild(nextLink);

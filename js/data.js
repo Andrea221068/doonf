@@ -6,6 +6,7 @@ var DOONF_COUNTRIES = [
     slug: { it: "italia", en: "italy" },
     name: { it: "Italia", en: "Italy" },
     capital: { it: "Roma", en: "Rome" },
+    continentId: "europe",
     continent: { it: "Europa", en: "Europe" },
     colors: {
       it: ["verde", "bianco", "rosso"],
@@ -23,6 +24,7 @@ var DOONF_COUNTRIES = [
     slug: { it: "svizzera", en: "switzerland" },
     name: { it: "Svizzera", en: "Switzerland" },
     capital: { it: "Berna", en: "Bern" },
+    continentId: "europe",
     continent: { it: "Europa", en: "Europe" },
     colors: {
       it: ["rosso", "bianco"],
@@ -40,6 +42,7 @@ var DOONF_COUNTRIES = [
     slug: { it: "nepal", en: "nepal" },
     name: { it: "Nepal", en: "Nepal" },
     capital: { it: "Kathmandu", en: "Kathmandu" },
+    continentId: "asia",
     continent: { it: "Asia", en: "Asia" },
     colors: {
       it: ["rosso cremisi", "blu", "bianco"],
@@ -57,6 +60,7 @@ var DOONF_COUNTRIES = [
     slug: { it: "stati-uniti", en: "united-states" },
     name: { it: "Stati Uniti", en: "United States" },
     capital: { it: "Washington", en: "Washington" },
+    continentId: "america",
     continent: { it: "America", en: "America" },
     colors: {
       it: ["rosso", "bianco", "blu"],
@@ -74,6 +78,7 @@ var DOONF_COUNTRIES = [
     slug: { it: "spagna", en: "spain" },
     name: { it: "Spagna", en: "Spain" },
     capital: { it: "Madrid", en: "Madrid" },
+    continentId: "europe",
     continent: { it: "Europa", en: "Europe" },
     colors: {
       it: ["rosso", "giallo", "oro", "blu", "bianco", "viola", "verde"],
@@ -92,7 +97,16 @@ var DOONF_TEXT = {
     homeTitle: "Doonf — bandiere da colorare",
     sheetTitle: "da colorare — Doonf",
     intro: "Bandiere da stampare e colorare",
-    note: "Prime cinque schede, per controllare il foglio.",
+    note: "Scegli un continente. Dentro, i Paesi sono in ordine alfabetico.",
+    all: "Tutte",
+    empty: "Ancora nessuna scheda.",
+    continents: [
+      { id: "africa", name: "Africa" },
+      { id: "america", name: "America" },
+      { id: "asia", name: "Asia" },
+      { id: "europe", name: "Europa" },
+      { id: "oceania", name: "Oceania" }
+    ],
     countries: "Paesi",
     print: "Stampa",
     previous: "Precedente",
@@ -107,7 +121,16 @@ var DOONF_TEXT = {
     homeTitle: "Doonf — flags to color",
     sheetTitle: "to color — Doonf",
     intro: "Flags to print and color",
-    note: "First five sheets, to check the page.",
+    note: "Choose a continent. Inside it, the countries are alphabetical.",
+    all: "All",
+    empty: "No sheets yet.",
+    continents: [
+      { id: "africa", name: "Africa" },
+      { id: "america", name: "America" },
+      { id: "asia", name: "Asia" },
+      { id: "europe", name: "Europe" },
+      { id: "oceania", name: "Oceania" }
+    ],
     countries: "Countries",
     print: "Print",
     previous: "Previous",
