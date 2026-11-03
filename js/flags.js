@@ -127,38 +127,36 @@ function doonfNepalParts() {
   var dist = Math.abs(M.x + M.y - ab) / s2;
   var N = { x: Hx, y: M.y - dist };
   var ln = Math.hypot(L.x - N.x, L.y - N.y);
-  var drop = L.y - M.y;
-  var half = Math.sqrt(Math.max(0, ln * ln - drop * drop));
-  var Q = { x: L.x + half, y: M.y };
-  var mq = Math.hypot(Q.x - M.x, Q.y - M.y);
   var hits = doonfCircles(L, ln, N, dist);
   var R = hits[0];
   var S = hits[1];
   var T = doonfLineAtX(R, S, Hx);
-  var crescentHits = doonfCircles(M, mq, N, dist);
   var border = Math.hypot(T.x - N.x, T.y - N.y);
-  var W = { x: Hx, y: F.y / 2 };
+  var W = { x: 1.15, y: 1.05 };
   var inner = [A, B, E, G, C];
   var outer = doonfOffset(inner, border);
-  var crescent = doonfArc(M, mq, crescentHits[0], crescentHits[1], N, false).concat(
-    doonfArc(N, dist, crescentHits[1], crescentHits[0], M, true)
+  var moon = { x: 0.92, y: 2.72 };
+  var moonOuter = { x: moon.x, y: moon.y };
+  var moonInner = { x: moon.x, y: moon.y + 0.2 };
+  var moonHits = doonfCircles(moonOuter, 0.46, moonInner, 0.36);
+  var moonLeft = moonHits[0].x < moonHits[1].x ? moonHits[0] : moonHits[1];
+  var moonRight = moonHits[0].x < moonHits[1].x ? moonHits[1] : moonHits[0];
+  var crescent = doonfArc(moonOuter, 0.46, moonLeft, moonRight, moonInner, true).concat(
+    doonfArc(moonInner, 0.36, moonRight, moonLeft, moonOuter, false)
   );
-  var tip = {
-    x: (crescentHits[0].x + crescentHits[1].x) / 2,
-    y: (crescentHits[0].y + crescentHits[1].y) / 2
-  };
+  var rayHub = { x: moon.x, y: moon.y + 0.16 };
   var rays = [];
   for (var i = 0; i < 8; i++) {
-    var a0 = Math.PI * (0.22 + 0.56 * i / 8);
-    var a1 = Math.PI * (0.22 + 0.56 * (i + 0.5) / 8);
-    var a2 = Math.PI * (0.22 + 0.56 * (i + 1) / 8);
+    var a0 = Math.PI * (0.16 + 0.68 * i / 8);
+    var a1 = Math.PI * (0.16 + 0.68 * (i + 0.5) / 8);
+    var a2 = Math.PI * (0.16 + 0.68 * (i + 1) / 8);
     rays.push([
-      { x: tip.x + 0.05 * Math.cos(a0), y: tip.y + 0.05 * Math.sin(a0) },
-      { x: tip.x + 0.34 * Math.cos(a1), y: tip.y + 0.34 * Math.sin(a1) },
-      { x: tip.x + 0.05 * Math.cos(a2), y: tip.y + 0.05 * Math.sin(a2) }
+      { x: rayHub.x + 0.2 * Math.cos(a0), y: rayHub.y + 0.2 * Math.sin(a0) },
+      { x: rayHub.x + 0.48 * Math.cos(a1), y: rayHub.y + 0.48 * Math.sin(a1) },
+      { x: rayHub.x + 0.2 * Math.cos(a2), y: rayHub.y + 0.2 * Math.sin(a2) }
     ]);
   }
-  var sun = doonfStar(W.x, W.y, ln, dist, 12, Math.PI / 2);
+  var sun = doonfStar(W.x, W.y, 0.58, 0.26, 12, Math.PI / 2);
   var bounds = outer.concat(rays.reduce(function (all, tri) {
     return all.concat(tri);
   }, [])).concat(sun);
