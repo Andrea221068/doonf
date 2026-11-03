@@ -18,7 +18,7 @@ a {
 }
 
 .chrome {
-  width: min(880px, calc(100% - 32px));
+  width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
 }
 
@@ -115,7 +115,7 @@ a {
 }
 
 .sheet-wrap {
-  width: min(880px, calc(100% - 32px));
+  width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
   padding-bottom: 36px;
 }
@@ -255,6 +255,88 @@ a {
 .flag-color [data-fill="azure"] { fill: #003399; }
 .flag-color [data-fill="purple"] { fill: #6b2d5b; }
 .flag-color [data-fill="leaf"] { fill: #067a3d; }
+.flag-color [data-fill="black"] { fill: #111; }
+.flag-color [data-fill="fr-blue"] { fill: #0055a4; }
+.flag-color [data-fill="fr-red"] { fill: #ef4135; }
+.flag-color [data-fill="de-red"] { fill: #dd0000; }
+.flag-color [data-fill="de-gold"] { fill: #ffce00; }
+.flag-color [data-fill="be-yellow"] { fill: #fae042; }
+.flag-color [data-fill="be-red"] { fill: #ef3340; }
+.flag-color [data-fill="nl-red"] { fill: #ae1c28; }
+.flag-color [data-fill="nl-blue"] { fill: #21468b; }
+.flag-color [data-fill="ru-blue"] { fill: #0039a6; }
+.flag-color [data-fill="ru-red"] { fill: #d52b1e; }
+.flag-color [data-fill="ie-green"] { fill: #169b62; }
+.flag-color [data-fill="ie-orange"] { fill: #ff883e; }
+.flag-color [data-fill="ro-blue"] { fill: #002b7f; }
+.flag-color [data-fill="ro-yellow"] { fill: #fcd116; }
+.flag-color [data-fill="ro-red"] { fill: #ce1126; }
+.flag-color [data-fill="hu-red"] { fill: #ce2939; }
+.flag-color [data-fill="hu-green"] { fill: #477050; }
+.flag-color [data-fill="bg-green"] { fill: #00966e; }
+.flag-color [data-fill="bg-red"] { fill: #d62612; }
+.flag-color [data-fill="at-red"] { fill: #ed2939; }
+.flag-color [data-fill="pl-red"] { fill: #dc143c; }
+.flag-color [data-fill="ua-blue"] { fill: #0057b7; }
+.flag-color [data-fill="ua-yellow"] { fill: #ffd500; }
+.flag-color [data-fill="ee-blue"] { fill: #0072ce; }
+.flag-color [data-fill="lt-yellow"] { fill: #fdb913; }
+.flag-color [data-fill="lt-green"] { fill: #006a44; }
+.flag-color [data-fill="lt-red"] { fill: #c1272d; }
+.flag-color [data-fill="lu-red"] { fill: #ed2939; }
+.flag-color [data-fill="lu-blue"] { fill: #00a1de; }
+.flag-color [data-fill="lv-red"] { fill: #9e3039; }
+.flag-color [data-fill="mc-red"] { fill: #ce1126; }
+.flag-color [data-fill="dk-red"] { fill: #c8102e; }
+.flag-color [data-fill="se-blue"] { fill: #006aa7; }
+.flag-color [data-fill="se-yellow"] { fill: #fecc00; }
+.flag-color [data-fill="fi-blue"] { fill: #003580; }
+.flag-color [data-fill="is-blue"] { fill: #02529c; }
+.flag-color [data-fill="is-red"] { fill: #dc1e35; }
+.flag-color [data-fill="no-red"] { fill: #ba0c2f; }
+.flag-color [data-fill="no-blue"] { fill: #00205b; }
+.flag-color [data-fill="cz-blue"] { fill: #11457e; }
+.flag-color [data-fill="cz-red"] { fill: #d7141a; }
+.flag-color [data-fill="gr-blue"] { fill: #0d5eaf; }
+.flag-color [data-fill="al-red"] { fill: #e41e20; }
+.flag-color [data-fill="ba-blue"] { fill: #002395; }
+.flag-color [data-fill="ba-yellow"] { fill: #fecb00; }
+.flag-color [data-fill="by-red"] { fill: #cf101a; }
+.flag-color [data-fill="by-green"] { fill: #007c30; }
+.flag-color [data-fill="pt-green"] { fill: #006600; }
+.flag-color [data-fill="pt-red"] { fill: #ff0000; }
+.flag-color [data-fill="pt-yellow"] { fill: #ffcc00; }
+.flag-color [data-fill="pt-blue"] { fill: #003399; }
+.flag-color [data-fill="mk-red"] { fill: #d82126; }
+.flag-color [data-fill="mk-yellow"] { fill: #f8e92e; }
+.flag-color [data-fill="cy-copper"] { fill: #d57800; }
+.flag-color [data-fill="cy-green"] { fill: #4e7d32; }
+.flag-color [data-fill="xk-blue"] { fill: #244aa5; }
+.flag-color [data-fill="xk-gold"] { fill: #d0a650; }
+.flag-color [data-fill="va-yellow"] { fill: #ffe000; }
+.flag-color [data-fill="va-red"] { fill: #c8102e; }
+.flag-color [data-fill="silver"] { fill: #c5c7c9; }
+.flag-color [data-fill="mt-red"] { fill: #cf142b; }
+.flag-color [data-fill="li-blue"] { fill: #002780; }
+.flag-color [data-fill="li-red"] { fill: #cf0921; }
+.flag-color [data-fill="sm-blue"] { fill: #5eb6e4; }
+.flag-color [data-fill="md-blue"] { fill: #003da5; }
+.flag-color [data-fill="md-yellow"] { fill: #ffd200; }
+.flag-color [data-fill="md-red"] { fill: #cc092f; }
+.flag-color [data-fill="ad-blue"] { fill: #10069f; }
+.flag-color [data-fill="ad-yellow"] { fill: #fedd00; }
+.flag-color [data-fill="ad-red"] { fill: #d50032; }
+.flag-color [data-fill="hr-red"] { fill: #ff0000; }
+.flag-color [data-fill="hr-blue"] { fill: #171796; }
+.flag-color [data-fill="sk-blue"] { fill: #0b4ea2; }
+.flag-color [data-fill="sk-red"] { fill: #ee1c25; }
+.flag-color [data-fill="si-blue"] { fill: #003da5; }
+.flag-color [data-fill="si-red"] { fill: #ed1c24; }
+.flag-color [data-fill="rs-red"] { fill: #c6363c; }
+.flag-color [data-fill="rs-blue"] { fill: #0c4076; }
+.flag-color [data-fill="me-red"] { fill: #c40308; }
+.flag-color [data-fill="gb-blue"] { fill: #012169; }
+.flag-color [data-fill="gb-red"] { fill: #c8102e; }
 
 @media (max-width: 640px) {
   .sheet h1 {

@@ -10,9 +10,16 @@ function doonfOrdered(lang) {
 
 function doonfPopulation(country, lang) {
   var text = doonfText(lang);
-  var rounded = Math.round(country.population / 1000000);
-  var unit = rounded === 1 ? text.millionOne : text.millionMany;
-  return text.about + " " + rounded + " " + unit + " (2026)";
+  var n = country.population;
+  if (n >= 1000000) {
+    var millions = Math.round(n / 1000000);
+    var unit = millions === 1 ? text.millionOne : text.millionMany;
+    return text.about + " " + millions + " " + unit + " (2026)";
+  }
+  if (n >= 1000) {
+    return text.about + " " + Math.round(n / 1000) + " " + text.thousand + " (2026)";
+  }
+  return text.about + " " + Math.round(n / 100) * 100 + " (2026)";
 }
 
 function doonfFacts(country, lang) {
