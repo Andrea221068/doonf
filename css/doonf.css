@@ -1,0 +1,302 @@
+:root {
+  color: #1c1917;
+  background: #f6f1e7;
+  font-family: "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+.chrome {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0 8px;
+}
+
+.brand {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.langs a {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.langs a[aria-current="true"] {
+  background: #1c1917;
+  color: #fff;
+}
+
+.intro {
+  margin: 8px 0 0;
+  font-size: 20px;
+}
+
+.note {
+  margin: 8px 0 0;
+  color: #57534e;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  padding: 18px 0 40px;
+}
+
+.card {
+  display: block;
+  padding: 14px;
+  background: #fff;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.card .mini {
+  height: 92px;
+}
+
+.card .mini .flag {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card h2 {
+  margin: 10px 0 0;
+  font-size: 22px;
+}
+
+.card p {
+  margin: 4px 0 0;
+  color: #57534e;
+}
+
+.sheet-wrap {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding-bottom: 36px;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0 14px;
+}
+
+.pager a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sheet {
+  padding: 22px 22px 26px;
+  background: #fff;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.sheet h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.facts {
+  margin: 8px 0 0;
+  font-size: 18px;
+}
+
+.frame {
+  height: 340px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame .flag {
+  width: 100%;
+  height: 100%;
+}
+
+.compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.compare .flag {
+  width: 132px;
+  height: 88px;
+}
+
+.colors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-size: 18px;
+}
+
+.colors li + li {
+  margin-top: 2px;
+}
+
+.meaning {
+  max-width: 62ch;
+  margin: 14px auto 0;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.print {
+  display: block;
+  margin: 16px auto 0;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #1c1917;
+  color: #fff;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.flag-line .areas [data-fill] {
+  fill: #fff;
+  stroke: none;
+}
+
+.flag-line .lines,
+.flag-line .lines path,
+.flag-line .lines circle,
+.flag-line .lines polygon,
+.flag-line .lines rect,
+.flag-line .lines line {
+  fill: none;
+  stroke: #111;
+  stroke-width: 2px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  vector-effect: non-scaling-stroke;
+}
+
+.flag-color .lines,
+.flag-color .lines path,
+.flag-color .lines circle,
+.flag-color .lines polygon,
+.flag-color .lines rect,
+.flag-color .lines line {
+  fill: none;
+  stroke: #1c1917;
+  stroke-width: 1px;
+  stroke-linejoin: miter;
+  vector-effect: non-scaling-stroke;
+}
+
+.flag-color [data-fill="green"] { fill: #009246; }
+.flag-color [data-fill="white"] { fill: #fff; }
+.flag-color [data-fill="red"] { fill: #ce2b37; }
+.flag-color [data-fill="swiss"] { fill: #da291c; }
+.flag-color [data-fill="crimson"] { fill: #dc143c; }
+.flag-color [data-fill="blue"] { fill: #003893; }
+.flag-color [data-fill="navy"] { fill: #3c3b6e; }
+.flag-color [data-fill="us-red"] { fill: #b22234; }
+.flag-color [data-fill="spain-red"] { fill: #aa151b; }
+.flag-color [data-fill="spain-yellow"] { fill: #f1bf00; }
+.flag-color [data-fill="gold"] { fill: #c9a227; }
+.flag-color [data-fill="azure"] { fill: #003399; }
+.flag-color [data-fill="purple"] { fill: #6b2d5b; }
+.flag-color [data-fill="leaf"] { fill: #067a3d; }
+
+@media (max-width: 640px) {
+  .sheet h1 {
+    font-size: 32px;
+  }
+
+  .frame {
+    height: 220px;
+  }
+
+  .compare {
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  :root {
+    background: #fff;
+  }
+
+  .chrome,
+  .print {
+    display: none;
+  }
+
+  .sheet-wrap {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sheet {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .sheet h1 {
+    font-size: 28pt;
+  }
+
+  .facts,
+  .colors,
+  .meaning {
+    font-size: 12pt;
+  }
+
+  .frame {
+    height: 118mm;
+    margin-top: 6mm;
+  }
+
+  .compare {
+    margin-top: 6mm;
+  }
+
+  .compare .flag {
+    width: 42mm;
+    height: 28mm;
+  }
+
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
