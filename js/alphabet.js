@@ -1,0 +1,233 @@
+var DOONF_LETTER_D = {
+  A: "M16 152L60 8L104 152L84 152L76 116L44 116L36 152ZM60 50L73 102L47 102Z",
+  B: "M20 10H68C98 10 108 28 108 46C108 64 96 76 74 78C100 82 112 98 112 118C112 142 94 152 66 152H20ZM40 28H64C80 28 88 36 88 46C88 58 78 66 62 66H40ZM40 94H66C86 94 94 104 94 118C94 134 82 142 66 142H40Z",
+  C: "M104 36L88 22C78 12 62 8 46 8C22 8 8 32 8 56L8 104C8 132 24 152 48 152C66 152 82 142 92 128L104 140L90 152C74 164 52 166 36 156C8 140 0 112 4 84L6 56C10 24 28 4 52 4C74 4 92 14 106 28Z",
+  D: "M18 8L18 152L64 152C98 152 112 128 112 80C112 32 98 8 64 8ZM40 28L62 28C80 28 88 46 88 80C88 114 80 132 62 132L40 132Z",
+  E: "M18 8L104 8L104 30L42 30L42 66L92 66L92 88L42 88L42 130L104 130L104 152L18 152Z",
+  F: "M18 8L104 8L104 30L42 30L42 66L92 66L92 88L42 88L42 152L18 152Z",
+  G: "M100 36C88 16 68 6 46 8C18 12 4 36 6 64L8 100C12 136 32 154 58 152C78 150 94 136 100 118L100 96L64 96L64 78L116 78L116 124C108 148 84 164 58 164C24 164 -2 136 2 100L4 62C8 24 28 2 56 2C78 2 96 12 110 28Z",
+  H: "M18 8L40 8L40 66L80 66L80 8L102 8L102 152L80 152L80 90L40 90L40 152L18 152Z",
+  I: "M34 8L86 8L86 30L70 30L70 130L86 130L86 152L34 152L34 130L50 130L50 30L34 30Z",
+  J: "M36 8H100V30H74V104C74 126 62 140 42 140C24 140 12 126 12 108L34 108C34 116 38 122 46 122C54 122 54 114 54 102V30H36Z",
+  K: "M18 8L40 8L40 64L68 8L96 8L56 72L100 152L72 152L40 90L40 152L18 152Z",
+  L: "M18 8L42 8L42 128L104 128L104 152L18 152Z",
+  M: "M12 152L12 8L36 8L60 58L84 8L108 8L108 152L86 152L86 46L60 96L34 46L34 152Z",
+  N: "M14 152L14 8L40 8L86 108L86 8L106 8L106 152L80 152L34 52L34 152Z",
+  O: "M18 40C18 14 36 4 60 4C84 4 102 14 102 40L102 120C102 146 84 156 60 156C36 156 18 146 18 120ZM40 46C40 32 48 26 60 26C72 26 80 32 80 46L80 114C80 128 72 134 60 134C48 134 40 128 40 114Z",
+  P: "M18 8L18 152L42 152L42 100L68 100C98 100 112 82 112 58C112 26 96 8 66 8ZM42 28L64 28C82 28 90 40 90 56C90 74 80 84 64 84L42 84Z",
+  Q: "M22 40C22 16 38 4 60 4C82 4 98 16 98 40L98 108C98 136 82 152 60 152C38 152 22 136 22 108ZM42 48C42 34 50 28 60 28C70 28 78 34 78 48L78 100C78 116 70 124 60 124C50 124 42 116 42 100Z",
+  R: "M18 8L18 152L42 152L42 98L60 98L90 152L116 152L78 88C102 80 114 64 114 46C114 20 96 8 66 8ZM42 28L64 28C82 28 90 38 90 52C90 66 80 78 62 78L42 78Z",
+  S: "M24 16H100V40H48V64H100V88H76V112H100V144H24V112H76V88H24V64H48V40H24Z",
+  T: "M16 8L104 8L104 32L72 32L72 152L48 152L48 32L16 32Z",
+  U: "M18 8L42 8L42 108C42 128 50 138 60 138C70 138 78 128 78 108L78 8L102 8L102 112C102 146 84 158 60 158C36 158 18 146 18 112Z",
+  V: "M14 8L38 8L60 112L82 8L106 8L72 152L48 152Z",
+  W: "M8 8L28 8L40 100L54 40L66 40L80 100L92 8L112 8L90 152L70 152L60 90L50 152L30 152Z",
+  X: "M16 8L42 8L60 48L78 8L104 8L74 68L104 152L78 152L60 100L42 152L16 152L46 68Z",
+  Y: "M14 8L40 8L60 52L80 8L106 8L74 64L74 152L46 152L46 64Z",
+  Z: "M16 8H108V36H64L108 116V152H16V124H60L16 44Z",
+  "Ñ": "M14 160L14 16L40 16L86 116L86 16L106 16L106 160L80 160L34 60L34 160ZM28 -6C40 6 50 -14 62 -2C74 10 86 -8 98 0L90 6C80 -2 74 8 62 0C50 -8 42 4 34 0Z"
+};
+
+var DOONF_LETTER_BOX = {
+  "Ñ": "0 -8 120 176"
+};
+
+var DOONF_LETTER_EXTRA = {
+  Q: "M72 108L112 148"
+};
+
+var DOONF_ALPHABET = {
+  it: {
+    letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z", "J", "K", "W", "X", "Y"],
+    A: [["bee", "ape"], ["plane", "aereo"], ["tree", "albero"]],
+    B: [["boat", "barca"], ["child", "bambino"], ["marble", "biglia"]],
+    C: [["house", "casa"], ["dog", "cane"], ["heart", "cuore"]],
+    D: [["die", "dado"], ["dinosaur", "dinosauro"], ["candy", "dolce"]],
+    E: [["elephant", "elefante"], ["helicopter", "elicottero"], ["grass", "erba"]],
+    F: [["flower", "fiore"], ["butterfly", "farfalla"], ["cheese", "formaggio"]],
+    G: [["cat", "gatto"], ["icecream", "gelato"], ["giraffe", "giraffa"]],
+    H: [["hotel", "hotel"], ["burger", "hamburger"], ["hockey", "hockey"]],
+    I: [["island", "isola"], ["igloo", "igloo"], ["hippo", "ippopotamo"]],
+    L: [["lion", "leone"], ["moon", "luna"], ["lemon", "limone"]],
+    M: [["apple", "mela"], ["sea", "mare"], ["cow", "mucca"]],
+    N: [["ship", "nave"], ["cloud", "nuvola"], ["nest", "nido"]],
+    O: [["bear", "orso"], ["eye", "occhio"], ["goose", "oca"]],
+    P: [["fish", "pesce"], ["bread", "pane"], ["ball", "palla"]],
+    Q: [["frame", "quadro"], ["notebook", "quaderno"], ["clover", "quadrifoglio"]],
+    R: [["rose", "rosa"], ["frog", "rana"], ["rocket", "razzo"]],
+    S: [["sun", "sole"], ["star", "stella"], ["snake", "serpente"]],
+    T: [["train", "treno"], ["table", "tavolo"], ["turtle", "tartaruga"]],
+    U: [["grapes", "uva"], ["egg", "uovo"], ["bird", "uccello"]],
+    V: [["fox", "volpe"], ["vase", "vaso"], ["violin", "violino"]],
+    Z: [["zebra", "zebra"], ["backpack", "zaino"], ["pumpkin", "zucca"]],
+    J: [["jeans", "jeans"], ["jeep", "jeep"], ["joker", "jolly"]],
+    K: [["koala", "koala"], ["kiwi", "kiwi"], ["kayak", "kayak"]],
+    W: [["sausage", "wurstel"], ["waffle", "waffle"], ["surf", "windsurf"]],
+    X: [["xylophone", "xilofono"], ["xenops", "xenops"], ["xenon", "xenon"]],
+    Y: [["yacht", "yacht"], ["yak", "yak"], ["yoyo", "yo-yo"]]
+  },
+  en: {
+    letters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    A: [["apple", "apple"], ["plane", "airplane"], ["ant", "ant"]],
+    B: [["ball", "ball"], ["bear", "bear"], ["bee", "bee"]],
+    C: [["cat", "cat"], ["car", "car"], ["cake", "cake"]],
+    D: [["dog", "dog"], ["duck", "duck"], ["dinosaur", "dinosaur"]],
+    E: [["elephant", "elephant"], ["egg", "egg"], ["eagle", "eagle"]],
+    F: [["fish", "fish"], ["flower", "flower"], ["frog", "frog"]],
+    G: [["gift", "gift"], ["grapes", "grapes"], ["giraffe", "giraffe"]],
+    H: [["hat", "hat"], ["house", "house"], ["horse", "horse"]],
+    I: [["igloo", "igloo"], ["icecream", "ice cream"], ["island", "island"]],
+    J: [["jar", "jar"], ["juice", "juice"], ["jacket", "jacket"]],
+    K: [["kite", "kite"], ["koala", "koala"], ["crown", "king"]],
+    L: [["lion", "lion"], ["leaf", "leaf"], ["lamp", "lamp"]],
+    M: [["moon", "moon"], ["mouse", "mouse"], ["monkey", "monkey"]],
+    N: [["nest", "nest"], ["nose", "nose"], ["net", "net"]],
+    O: [["octopus", "octopus"], ["orange", "orange"], ["owl", "owl"]],
+    P: [["pig", "pig"], ["pizza", "pizza"], ["penguin", "penguin"]],
+    Q: [["queen", "queen"], ["quilt", "quilt"], ["quill", "quill"]],
+    R: [["rabbit", "rabbit"], ["rainbow", "rainbow"], ["rocket", "rocket"]],
+    S: [["sun", "sun"], ["star", "star"], ["snake", "snake"]],
+    T: [["tree", "tree"], ["tiger", "tiger"], ["train", "train"]],
+    U: [["umbrella", "umbrella"], ["unicorn", "unicorn"], ["ukulele", "ukulele"]],
+    V: [["violin", "violin"], ["volcano", "volcano"], ["van", "van"]],
+    W: [["whale", "whale"], ["watch", "watch"], ["window", "window"]],
+    X: [["xylophone", "xylophone"], ["xray", "x-ray"], ["xenops", "xenops"]],
+    Y: [["yoyo", "yo-yo"], ["yacht", "yacht"], ["yak", "yak"]],
+    Z: [["zebra", "zebra"], ["zipper", "zipper"], ["zoo", "zoo"]]
+  },
+  es: {
+    letters: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+    A: [["tree", "árbol"], ["bee", "abeja"], ["spider", "araña"]],
+    B: [["boat", "barco"], ["whale", "ballena"], ["bike", "bicicleta"]],
+    C: [["house", "casa"], ["car", "coche"], ["heart", "corazón"]],
+    D: [["die", "dado"], ["dolphin", "delfín"], ["dinosaur", "dinosaurio"]],
+    E: [["elephant", "elefante"], ["star", "estrella"], ["stairs", "escalera"]],
+    F: [["seal", "foca"], ["flower", "flor"], ["strawberry", "fresa"]],
+    G: [["cat", "gato"], ["balloon", "globo"], ["glasses", "gafas"]],
+    H: [["icecream", "helado"], ["leaf", "hoja"], ["ant", "hormiga"]],
+    I: [["iguana", "iguana"], ["island", "isla"], ["magnet", "imán"]],
+    J: [["giraffe", "jirafa"], ["ham", "jamón"], ["cage", "jaula"]],
+    K: [["koala", "koala"], ["kiwi", "kiwi"], ["kayak", "kayak"]],
+    L: [["lamp", "lámpara"], ["lion", "león"], ["moon", "luna"]],
+    M: [["apple", "manzana"], ["butterfly", "mariposa"], ["monkey", "mono"]],
+    N: [["nest", "nido"], ["cloud", "nube"], ["child", "niño"]],
+    "Ñ": [["rhea", "ñandú"], ["gnu", "ñu"], ["yam", "ñame"]],
+    O: [["bear", "oso"], ["eye", "ojo"], ["sheep", "oveja"]],
+    P: [["pineapple", "piña"], ["dog", "perro"], ["fish", "pez"]],
+    Q: [["cheese", "queso"], ["kiosk", "quiosco"], ["flask", "química"]],
+    R: [["rose", "rosa"], ["mouse", "ratón"], ["watch", "reloj"]],
+    S: [["sun", "sol"], ["hat", "sombrero"], ["snake", "serpiente"]],
+    T: [["tomato", "tomate"], ["train", "tren"], ["tiger", "tigre"]],
+    U: [["grapes", "uva"], ["unicorn", "unicornio"], ["uniform", "uniforme"]],
+    V: [["cow", "vaca"], ["vase", "vaso"], ["volcano", "volcán"]],
+    W: [["waffle", "waffle"], ["surf", "windsurf"], ["wallaby", "walabí"]],
+    X: [["xylophone", "xilófono"], ["xenops", "xenops"], ["xenon", "xenón"]],
+    Y: [["yoyo", "yoyó"], ["yacht", "yate"], ["horse", "yegua"]],
+    Z: [["fox", "zorro"], ["shoe", "zapato"], ["carrot", "zanahoria"]]
+  },
+  fr: {
+    letters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    A: [["bee", "abeille"], ["plane", "avion"], ["tree", "arbre"]],
+    B: [["boat", "bateau"], ["whale", "baleine"], ["balloon", "ballon"]],
+    C: [["cat", "chat"], ["castle", "château"], ["heart", "cœur"]],
+    D: [["dolphin", "dauphin"], ["dinosaur", "dinosaure"], ["die", "dé"]],
+    E: [["elephant", "éléphant"], ["snail", "escargot"], ["star", "étoile"]],
+    F: [["flower", "fleur"], ["cheese", "fromage"], ["rocket", "fusée"]],
+    G: [["cake", "gâteau"], ["giraffe", "girafe"], ["glove", "gant"]],
+    H: [["owl", "hibou"], ["hedgehog", "hérisson"], ["hippo", "hippopotame"]],
+    I: [["igloo", "igloo"], ["island", "île"], ["iguana", "iguane"]],
+    J: [["garden", "jardin"], ["skirt", "jupe"], ["teddy", "jouet"]],
+    K: [["koala", "koala"], ["kiwi", "kiwi"], ["kayak", "kayak"]],
+    L: [["lion", "lion"], ["moon", "lune"], ["rabbit", "lapin"]],
+    M: [["house", "maison"], ["sheep", "mouton"], ["moto", "moto"]],
+    N: [["nest", "nid"], ["cloud", "nuage"], ["ship", "navire"]],
+    O: [["bear", "ours"], ["bird", "oiseau"], ["orange", "orange"]],
+    P: [["fish", "poisson"], ["butterfly", "papillon"], ["apple", "pomme"]],
+    Q: [["pin", "quille"], ["four", "quatre"], ["question", "question"]],
+    R: [["fox", "renard"], ["rose", "rose"], ["robot", "robot"]],
+    S: [["sun", "soleil"], ["snake", "serpent"], ["monkey", "singe"]],
+    T: [["turtle", "tortue"], ["train", "train"], ["tomato", "tomate"]],
+    U: [["uniform", "uniforme"], ["ukulele", "ukulélé"], ["factory", "usine"]],
+    V: [["cow", "vache"], ["car", "voiture"], ["volcano", "volcan"]],
+    W: [["wagon", "wagon"], ["wallaby", "wallaby"], ["wifi", "wifi"]],
+    X: [["xylophone", "xylophone"], ["squirrel", "xérus"], ["xenops", "xenops"]],
+    Y: [["yacht", "yacht"], ["yak", "yack"], ["yoyo", "yoyo"]],
+    Z: [["zebra", "zèbre"], ["zoo", "zoo"], ["zigzag", "zigzag"]]
+  },
+  pt: {
+    letters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    A: [["bee", "abelha"], ["avocado", "abacate"], ["plane", "avião"]],
+    B: [["ball", "bola"], ["banana", "banana"], ["balloon", "balão"]],
+    C: [["house", "casa"], ["dog", "cachorro"], ["heart", "coração"]],
+    D: [["die", "dado"], ["dinosaur", "dinossauro"], ["tooth", "dente"]],
+    E: [["elephant", "elefante"], ["star", "estrela"], ["stairs", "escada"]],
+    F: [["flower", "flor"], ["seal", "foca"], ["ant", "formiga"]],
+    G: [["cat", "gato"], ["giraffe", "girafa"], ["ice", "gelo"]],
+    H: [["hippo", "hipopótamo"], ["helicopter", "helicóptero"], ["burger", "hambúrguer"]],
+    I: [["island", "ilha"], ["church", "igreja"], ["igloo", "iglu"]],
+    J: [["window", "janela"], ["alligator", "jacaré"], ["ladybug", "joaninha"]],
+    K: [["koala", "koala"], ["kiwi", "kiwi"], ["jeep", "kart"]],
+    L: [["lion", "leão"], ["moon", "lua"], ["pencil", "lápis"]],
+    M: [["monkey", "macaco"], ["hand", "mão"], ["watermelon", "melancia"]],
+    N: [["ship", "navio"], ["cloud", "nuvem"], ["nest", "ninho"]],
+    O: [["egg", "ovo"], ["glasses", "óculos"], ["sheep", "ovelha"]],
+    P: [["duck", "pato"], ["bread", "pão"], ["fish", "peixe"]],
+    Q: [["cheese", "queijo"], ["frame", "quadro"], ["coati", "quati"]],
+    R: [["mouse", "rato"], ["rose", "rosa"], ["robot", "robô"]],
+    S: [["sun", "sol"], ["frog", "sapo"], ["bell", "sino"]],
+    T: [["turtle", "tartaruga"], ["train", "trem"], ["armadillo", "tatu"]],
+    U: [["grapes", "uva"], ["bear", "urso"], ["unicorn", "unicórnio"]],
+    V: [["cow", "vaca"], ["candle", "vela"], ["guitar", "violão"]],
+    W: [["waffle", "waffle"], ["surf", "windsurf"], ["wallaby", "wallaby"]],
+    X: [["cup", "xícara"], ["xylophone", "xilofone"], ["star", "xerife"]],
+    Y: [["yak", "yak"], ["yoga", "yoga"], ["yoyo", "yoyo"]],
+    Z: [["zebra", "zebra"], ["zipper", "zíper"], ["bee", "zangão"]]
+  },
+  de: {
+    letters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+    A: [["apple", "Apfel"], ["monkey", "Affe"], ["car", "Auto"]],
+    B: [["ball", "Ball"], ["bear", "Bär"], ["banana", "Banane"]],
+    C: [["clown", "Clown"], ["computer", "Computer"], ["comic", "Comic"]],
+    D: [["dolphin", "Delfin"], ["dinosaur", "Dinosaurier"], ["roof", "Dach"]],
+    E: [["elephant", "Elefant"], ["icecream", "Eis"], ["duck", "Ente"]],
+    F: [["fish", "Fisch"], ["bike", "Fahrrad"], ["plane", "Flugzeug"]],
+    G: [["fork", "Gabel"], ["giraffe", "Giraffe"], ["gift", "Geschenk"]],
+    H: [["house", "Haus"], ["dog", "Hund"], ["hat", "Hut"]],
+    I: [["hedgehog", "Igel"], ["island", "Insel"], ["igloo", "Iglu"]],
+    J: [["jacket", "Jacke"], ["child", "Junge"], ["tub", "Joghurt"]],
+    K: [["cat", "Katze"], ["kangaroo", "Känguru"], ["cake", "Kuchen"]],
+    L: [["lion", "Löwe"], ["lamp", "Lampe"], ["spoon", "Löffel"]],
+    M: [["mouse", "Maus"], ["moon", "Mond"], ["cap", "Mütze"]],
+    N: [["rhino", "Nashorn"], ["nose", "Nase"], ["nest", "Nest"]],
+    O: [["ear", "Ohr"], ["orange", "Orange"], ["oven", "Ofen"]],
+    P: [["penguin", "Pinguin"], ["pizza", "Pizza"], ["palm", "Palme"]],
+    Q: [["jellyfish", "Qualle"], ["tub", "Quark"], ["spring", "Quelle"]],
+    R: [["robot", "Roboter"], ["rose", "Rose"], ["rocket", "Rakete"]],
+    S: [["sun", "Sonne"], ["star", "Stern"], ["snake", "Schlange"]],
+    T: [["tiger", "Tiger"], ["cup", "Tasse"], ["tractor", "Traktor"]],
+    U: [["watch", "Uhr"], ["ufo", "Ufo"], ["submarine", "U-Boot"]],
+    V: [["bird", "Vogel"], ["volcano", "Vulkan"], ["vase", "Vase"]],
+    W: [["whale", "Wal"], ["cloud", "Wolke"], ["die", "Würfel"]],
+    X: [["xylophone", "Xylophon"], ["xenops", "Xenops"], ["xenon", "Xenon"]],
+    Y: [["yacht", "Yacht"], ["yak", "Yak"], ["yoyo", "Yo-Yo"]],
+    Z: [["zebra", "Zebra"], ["train", "Zug"], ["tent", "Zelt"]]
+  }
+};
+
+function doonfAlphabetSvg(letter, iconId, label) {
+  var d = DOONF_LETTER_D[letter] || "";
+  var extra = DOONF_LETTER_EXTRA[letter] || "";
+  var areas = '<path data-fill="white" fill-rule="evenodd" d="' + d + '"></path>';
+  var lines = '<path d="' + d + '"></path>' + (extra ? '<path d="' + extra + '"></path>' : "");
+  var box = DOONF_LETTER_BOX[letter] || "0 0 120 160";
+  if (iconId && DOONF_ICONS[iconId]) {
+    var icon = DOONF_ICONS[iconId]();
+    var moved = ' transform="translate(145 12) scale(1.3)"';
+    areas += '<path data-fill="white" d="' + icon + '"' + moved + "></path>";
+    lines += "<path d=\"" + icon + "\"" + moved + "></path>";
+    box = DOONF_LETTER_BOX[letter] ? "0 -8 290 176" : "0 0 290 160";
+  }
+  var safe = String(label || letter).replace(/"/g, "");
+  return '<svg class="flag flag-line" viewBox="' + box + '" role="img" aria-label="' + safe + '"><g class="areas">' +
+    areas + '</g><g class="lines">' + lines + "</g></svg>";
+}

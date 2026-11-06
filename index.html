@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="css/doonf.css">
 </head>
 <body>
-  <p class="intro"><a href="it/index.html">Italiano</a> · <a href="en/index.html">English</a></p>
+  <p class="intro"><a href="it/index.html">Italiano</a> · <a href="en/index.html">English</a> · <a href="es/index.html">Español</a> · <a href="fr/index.html">Français</a> · <a href="pt/index.html">Português</a> · <a href="de/index.html">Deutsch</a></p>
   <script>
     var language = (navigator.language || "en").toLowerCase();
-    location.replace(language.indexOf("it") === 0 ? "it/index.html" : "en/index.html");
+    var code = "en";
+    ["it", "es", "fr", "pt", "de"].forEach(function (item) {
+      if (language.indexOf(item) === 0) code = item;
+    });
+    location.replace(code + "/index.html");
   </script>
 </body>
 </html>
