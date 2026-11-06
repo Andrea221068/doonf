@@ -244,7 +244,7 @@ var DOONF_ICONS = {
     return doonfDisk(32, 62, 18) + doonfDisk(68, 62, 18) + doonfBox(48, 58, 8, 8) + doonfBox(50, 8, 3, 52);
   },
   bee: function () {
-    return doonfOval(50, 64, 18, 22) + doonfBox(36, 54, 28, 5) + doonfBox(36, 68, 28, 5) + doonfOval(30, 32, 14, 8) + doonfOval(70, 32, 14, 8) + doonfDisk(50, 30, 8);
+    return doonfDisk(50, 30, 16) + doonfOval(50, 66, 18, 24) + doonfOval(22, 56, 14, 10) + doonfOval(78, 56, 14, 10) + doonfOval(20, 72, 12, 8) + doonfOval(80, 72, 12, 8) + "M40 16C34 8 26 8 22 6" + doonfDisk(20, 5, 3.5) + "M60 16C66 8 74 8 78 6" + doonfDisk(80, 5, 3.5) + doonfDisk(43, 28, 5) + doonfDisk(57, 28, 5) + "M43 36C46 41 54 41 57 36" + "M40 58C46 56 54 56 60 58" + "M38 67C46 65 54 65 62 67" + "M40 76C46 74 54 74 60 76" + "M44 84C47 83 53 83 56 84" + "M48 90L50 98M52 90L50 98";
   },
   ant: function () {
     return doonfOval(50, 28, 10, 8) + doonfOval(50, 48, 12, 10) + doonfOval(50, 72, 14, 12) + doonfPoly([[38, 40], [16, 28], [18, 36]]) + doonfPoly([[62, 40], [84, 28], [82, 36]]) + doonfPoly([[40, 70], [18, 84], [24, 90]]) + doonfPoly([[60, 70], [82, 84], [76, 90]]) + doonfPoly([[46, 20], [42, 8], [48, 18]]) + doonfPoly([[54, 20], [58, 8], [52, 18]]);

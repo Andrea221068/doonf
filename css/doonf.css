@@ -187,6 +187,12 @@ a {
   stroke-linecap: round;
 }
 
+.letter-line .lines path.pic {
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
 .card .mini .letter-line,
 .sheet.plain .frame .letter-line {
   width: auto;

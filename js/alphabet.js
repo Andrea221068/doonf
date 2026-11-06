@@ -194,8 +194,9 @@ function doonfAlphabetSvg(letter, iconId, label, style) {
     var x = width + 16;
     var y = Math.max(8, (height - 130) / 2);
     var moved = ' transform="translate(' + x + " " + y + ') scale(1.3)"';
-    areas += '<path data-fill="white" d="' + icon + '"' + moved + "></path>";
-    lines += "<path d=\"" + icon + "\"" + moved + "></path>";
+    var pic = iconId === "bee" ? ' class="pic"' : "";
+    areas += '<path data-fill="white" d="' + icon + '"' + pic + moved + "></path>";
+    lines += "<path d=\"" + icon + "\"" + pic + moved + "></path>";
     width = x + 136;
   }
   var safe = String(label || letter).replace(/"/g, "");
