@@ -1083,6 +1083,42 @@ a {
 .flag-color [data-fill="vn-ffff00"] { fill: #ffff00; }
 .flag-color [data-fill="ye-ce1126"] { fill: #ce1126; }
 
+.flag-color [data-fill="au-00008b"] { fill: #00008b; }
+.flag-color [data-fill="au-ff0000"] { fill: #ff0000; }
+.flag-color [data-fill="fj-012169"] { fill: #012169; }
+.flag-color [data-fill="fj-c8102e"] { fill: #c8102e; }
+.flag-color [data-fill="fj-62b5e5"] { fill: #62b5e5; }
+.flag-color [data-fill="fj-fedd00"] { fill: #fedd00; }
+.flag-color [data-fill="fj-00ad50"] { fill: #00ad50; }
+.flag-color [data-fill="fj-862633"] { fill: #862633; }
+.flag-color [data-fill="ki-c81010"] { fill: #c81010; }
+.flag-color [data-fill="ki-f8d000"] { fill: #f8d000; }
+.flag-color [data-fill="ki-183070"] { fill: #183070; }
+.flag-color [data-fill="mh-dd7500"] { fill: #dd7500; }
+.flag-color [data-fill="mh-003893"] { fill: #003893; }
+.flag-color [data-fill="fm-75b2dd"] { fill: #75b2dd; }
+.flag-color [data-fill="nr-012169"] { fill: #012169; }
+.flag-color [data-fill="nr-ffc72c"] { fill: #ffc72c; }
+.flag-color [data-fill="nz-012169"] { fill: #012169; }
+.flag-color [data-fill="nz-c8102e"] { fill: #c8102e; }
+.flag-color [data-fill="pw-0099ff"] { fill: #0099ff; }
+.flag-color [data-fill="pw-ffff00"] { fill: #ffff00; }
+.flag-color [data-fill="pg-c8102e"] { fill: #c8102e; }
+.flag-color [data-fill="pg-ffcd00"] { fill: #ffcd00; }
+.flag-color [data-fill="ws-ce1126"] { fill: #ce1126; }
+.flag-color [data-fill="ws-002b7f"] { fill: #002b7f; }
+.flag-color [data-fill="sb-215b33"] { fill: #215b33; }
+.flag-color [data-fill="sb-0051ba"] { fill: #0051ba; }
+.flag-color [data-fill="sb-fcd116"] { fill: #fcd116; }
+.flag-color [data-fill="to-c10000"] { fill: #c10000; }
+.flag-color [data-fill="tv-012169"] { fill: #012169; }
+.flag-color [data-fill="tv-c8102e"] { fill: #c8102e; }
+.flag-color [data-fill="tv-009cde"] { fill: #009cde; }
+.flag-color [data-fill="tv-fedd00"] { fill: #fedd00; }
+.flag-color [data-fill="vu-d21034"] { fill: #d21034; }
+.flag-color [data-fill="vu-009543"] { fill: #009543; }
+.flag-color [data-fill="vu-fdce12"] { fill: #fdce12; }
+
 @media (max-width: 640px) {
   .sheet h1 {
     font-size: 32px;

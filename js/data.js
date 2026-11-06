@@ -2216,6 +2216,175 @@ var DOONF_COUNTRIES = [
     colors: { it: ["rosso", "bianco", "nero"], en: ["red", "white", "black"] },
     sentence: { it: "Il rosso sta sopra, il bianco in mezzo e il nero sotto.", en: "Red is on top, white in the middle and black below." }
   }
+,
+  {
+    id: "australia",
+    flag: "australia",
+    population: 27227096,
+    slug: { it: "australia", en: "australia" },
+    name: { it: "Australia", en: "Australia" },
+    capital: { it: "Canberra", en: "Canberra" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["blu", "bianco", "rosso"], en: ["blue", "white", "red"] },
+    sentence: { it: "La stella grande ha sette punte e la più piccola della Croce del Sud ne ha cinque.", en: "The big star has seven points and the smallest star of the Southern Cross has five." }
+  },
+  {
+    id: "figi",
+    flag: "fiji",
+    population: 937282,
+    slug: { it: "figi", en: "fiji" },
+    name: { it: "Figi", en: "Fiji" },
+    capital: { it: "Suva", en: "Suva" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["azzurro", "blu", "bianco", "rosso", "giallo", "verde", "granata", "nero"], en: ["light blue", "blue", "white", "red", "yellow", "green", "maroon", "black"] },
+    sentence: { it: "Lo scudo ha un leone, una croce rossa, una palma e una colomba.", en: "The shield has a lion, a red cross, a palm and a dove." }
+  },
+  {
+    id: "kiribati",
+    flag: "kiribati",
+    population: 138445,
+    slug: { it: "kiribati", en: "kiribati" },
+    name: { it: "Kiribati", en: "Kiribati" },
+    capital: { it: "Tarawa Sud", en: "South Tarawa" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["rosso", "giallo", "nero", "blu", "bianco"], en: ["red", "yellow", "black", "blue", "white"] },
+    sentence: { it: "Il sole sorge dal mare e sopra vola una fregata.", en: "The sun rises from the sea and a frigatebird flies above it." }
+  },
+  {
+    id: "isole-marshall",
+    flag: "marshallIslands",
+    population: 35075,
+    slug: { it: "isole-marshall", en: "marshall-islands" },
+    name: { it: "Isole Marshall", en: "Marshall Islands" },
+    capital: { it: "Majuro", en: "Majuro" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["blu", "arancione", "bianco"], en: ["blue", "orange", "white"] },
+    sentence: { it: "La stella bianca ha ventiquattro punte.", en: "The white star has twenty-four points." }
+  },
+  {
+    id: "micronesia",
+    flag: "micronesia",
+    population: 114183,
+    slug: { it: "micronesia", en: "micronesia" },
+    name: { it: "Micronesia", en: "Micronesia" },
+    capital: { it: "Palikir", en: "Palikir" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["azzurro", "bianco"], en: ["light blue", "white"] },
+    sentence: { it: "Le quattro stelle stanno una per lato, con una punta verso l'esterno.", en: "The four stars sit one on each side, with a point facing outward." }
+  },
+  {
+    id: "nauru",
+    flag: "nauru",
+    population: 12101,
+    slug: { it: "nauru", en: "nauru" },
+    name: { it: "Nauru", en: "Nauru" },
+    capital: { it: "Yaren", en: "Yaren" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["blu", "giallo", "bianco"], en: ["blue", "yellow", "white"] },
+    sentence: { it: "La stella bianca ha dodici punte e sta sotto la riga gialla.", en: "The white star has twelve points and sits below the yellow stripe." }
+  },
+  {
+    id: "nuova-zelanda",
+    flag: "newZealand",
+    population: 5287479,
+    slug: { it: "nuova-zelanda", en: "new-zealand" },
+    name: { it: "Nuova Zelanda", en: "New Zealand" },
+    capital: { it: "Wellington", en: "Wellington" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["blu", "bianco", "rosso"], en: ["blue", "white", "red"] },
+    sentence: { it: "Le quattro stelle rosse sono la Croce del Sud.", en: "The four red stars are the Southern Cross." }
+  },
+  {
+    id: "palau",
+    flag: "palau",
+    population: 17614,
+    slug: { it: "palau", en: "palau" },
+    name: { it: "Palau", en: "Palau" },
+    capital: { it: "Ngerulmud", en: "Ngerulmud" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["azzurro", "giallo"], en: ["light blue", "yellow"] },
+    sentence: { it: "Il disco giallo non sta al centro: è spostato verso l'asta.", en: "The yellow disc is not in the centre: it sits toward the hoist." }
+  },
+  {
+    id: "papua-nuova-guinea",
+    flag: "papuaNewGuinea",
+    population: 10947848,
+    slug: { it: "papua-nuova-guinea", en: "papua-new-guinea" },
+    name: { it: "Papua Nuova Guinea", en: "Papua New Guinea" },
+    capital: { it: "Port Moresby", en: "Port Moresby" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["nero", "rosso", "giallo", "bianco"], en: ["black", "red", "yellow", "white"] },
+    sentence: { it: "L'uccello del paradiso è giallo e le cinque stelle sono la Croce del Sud.", en: "The bird-of-paradise is yellow and the five stars are the Southern Cross." }
+  },
+  {
+    id: "samoa",
+    flag: "samoa",
+    population: 220528,
+    slug: { it: "samoa", en: "samoa" },
+    name: { it: "Samoa", en: "Samoa" },
+    capital: { it: "Apia", en: "Apia" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["rosso", "blu", "bianco"], en: ["red", "blue", "white"] },
+    sentence: { it: "Le cinque stelle bianche sono la Croce del Sud.", en: "The five white stars are the Southern Cross." }
+  },
+  {
+    id: "isole-salomone",
+    flag: "solomonIslands",
+    population: 858288,
+    slug: { it: "isole-salomone", en: "solomon-islands" },
+    name: { it: "Isole Salomone", en: "Solomon Islands" },
+    capital: { it: "Honiara", en: "Honiara" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["verde", "blu", "giallo", "bianco"], en: ["green", "blue", "yellow", "white"] },
+    sentence: { it: "Le cinque stelle bianche stanno sul triangolo blu.", en: "The five white stars are on the blue triangle." }
+  },
+  {
+    id: "tonga",
+    flag: "tonga",
+    population: 103291,
+    slug: { it: "tonga", en: "tonga" },
+    name: { it: "Tonga", en: "Tonga" },
+    capital: { it: "Nuku'alofa", en: "Nuku'alofa" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["rosso", "bianco"], en: ["red", "white"] },
+    sentence: { it: "La croce rossa sta nel riquadro bianco.", en: "The red cross is in the white rectangle." }
+  },
+  {
+    id: "tuvalu",
+    flag: "tuvalu",
+    population: 9362,
+    slug: { it: "tuvalu", en: "tuvalu" },
+    name: { it: "Tuvalu", en: "Tuvalu" },
+    capital: { it: "Funafuti", en: "Funafuti" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["blu", "bianco", "rosso", "azzurro", "giallo"], en: ["blue", "white", "red", "light blue", "yellow"] },
+    sentence: { it: "Le nove stelle gialle sono le isole di Tuvalu.", en: "The nine yellow stars are the islands of Tuvalu." }
+  },
+  {
+    id: "vanuatu",
+    flag: "vanuatu",
+    population: 342564,
+    slug: { it: "vanuatu", en: "vanuatu" },
+    name: { it: "Vanuatu", en: "Vanuatu" },
+    capital: { it: "Port Vila", en: "Port Vila" },
+    continentId: "oceania",
+    continent: { it: "Oceania", en: "Oceania" },
+    colors: { it: ["rosso", "verde", "nero", "giallo"], en: ["red", "green", "black", "yellow"] },
+    sentence: { it: "Nel triangolo nero ci sono una zanna e due foglie incrociate.", en: "In the black triangle there is a tusk and two crossed leaves." }
+  }
 ];
 
 var DOONF_TEXT = {
