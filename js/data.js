@@ -2419,7 +2419,8 @@ var DOONF_TEXT = {
     alphabetNote: "Scegli una lettera. Poi scegli il foglio.",
     letterAlone: "Solo la lettera",
     letterChoose: "Scegli il foglio da stampare",
-    letterLabel: "Lettera"
+    letterLabel: "Lettera",
+    letterShape: "Scegli la forma della lettera"
   },
   en: {
     htmlLang: "en",
@@ -2452,7 +2453,8 @@ var DOONF_TEXT = {
     alphabetNote: "Choose a letter. Then choose the sheet.",
     letterAlone: "Letter only",
     letterChoose: "Choose the sheet to print",
-    letterLabel: "Letter"
+    letterLabel: "Letter",
+    letterShape: "Choose the letter shape"
   },
   es: {
     htmlLang: "es",
@@ -2485,7 +2487,8 @@ var DOONF_TEXT = {
     alphabetNote: "Elige una letra. Luego elige la hoja.",
     letterAlone: "Solo la letra",
     letterChoose: "Elige la hoja para imprimir",
-    letterLabel: "Letra"
+    letterLabel: "Letra",
+    letterShape: "Elige la forma de la letra"
   },
   fr: {
     htmlLang: "fr",
@@ -2518,7 +2521,8 @@ var DOONF_TEXT = {
     alphabetNote: "Choisis une lettre. Puis choisis la feuille.",
     letterAlone: "Seulement la lettre",
     letterChoose: "Choisis la feuille à imprimer",
-    letterLabel: "Lettre"
+    letterLabel: "Lettre",
+    letterShape: "Choisis la forme de la lettre"
   },
   pt: {
     htmlLang: "pt",
@@ -2551,7 +2555,8 @@ var DOONF_TEXT = {
     alphabetNote: "Escolhe uma letra. Depois escolhe a folha.",
     letterAlone: "Só a letra",
     letterChoose: "Escolhe a folha para imprimir",
-    letterLabel: "Letra"
+    letterLabel: "Letra",
+    letterShape: "Escolhe a forma da letra"
   },
   de: {
     htmlLang: "de",
@@ -2584,6 +2589,7 @@ var DOONF_TEXT = {
     alphabetNote: "Wähl einen Buchstaben. Dann wähl das Blatt.",
     letterAlone: "Nur der Buchstabe",
     letterChoose: "Wähl das Blatt zum Drucken",
-    letterLabel: "Buchstabe"
+    letterLabel: "Buchstabe",
+    letterShape: "Wähl die Form des Buchstabens"
   }
 };

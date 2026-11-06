@@ -156,7 +156,7 @@ function doonfHome(lang) {
       empty.hidden = true;
       DOONF_ALPHABET[lang].letters.forEach(function (letter) {
         var link = document.createElement("a");
-        link.href = "alfabeto.html#" + encodeURIComponent(letter);
+        link.href = "alfabeto.html" + doonfLetterHash(letter, -1, doonfLetterStyle());
         link.textContent = letter;
         list.appendChild(link);
       });
@@ -306,15 +306,34 @@ function doonfAlphabet(lang) {
     var raw = decodeURIComponent((location.hash || "#A").replace(/^#/, ""));
     var bits = raw.split("/");
     var letter = pack.letters.indexOf(bits[0]) >= 0 ? bits[0] : pack.letters[0];
-    var index = bits.length > 1 ? Number(bits[1]) : -1;
-    if (!(index >= 0 && index <= 3)) index = -1;
-    return { letter: letter, index: index };
+    var index = -1;
+    var style = "";
+    bits.slice(1).forEach(function (bit) {
+      if (DOONF_LETTER_SHAPES[bit]) style = bit;
+      else if (index < 0 && /^[0-3]$/.test(bit)) index = Number(bit);
+    });
+    if (style) doonfRememberLetterStyle(style);
+    else style = doonfLetterStyle();
+    return { letter: letter, index: index, style: style };
+  }
+
+  function styleBar(view) {
+    var nav = document.createElement("nav");
+    nav.className = "chrome filters";
+    DOONF_LETTER_STYLE_ORDER.forEach(function (id) {
+      var link = document.createElement("a");
+      link.href = doonfLetterHash(view.letter, view.index, id);
+      link.textContent = DOONF_LETTER_STYLE_NAME[id];
+      if (id === view.style) link.setAttribute("aria-current", "true");
+      nav.appendChild(link);
+    });
+    return nav;
   }
 
   function render() {
     var view = parts();
     var words = pack[view.letter];
-    var suffix = "#" + encodeURIComponent(view.letter) + (view.index >= 0 ? "/" + view.index : "");
+    var suffix = doonfLetterHash(view.letter, view.index, view.style);
     root.textContent = "";
     root.appendChild(doonfChrome(lang, function (code) {
       var base = code === lang ? "alfabeto.html" : "../" + code + "/alfabeto.html";
@@ -326,6 +345,9 @@ function doonfAlphabet(lang) {
       var intro = document.createElement("p");
       intro.className = "chrome intro";
       intro.textContent = text.letterLabel + " " + view.letter;
+      var shapeNote = document.createElement("p");
+      shapeNote.className = "chrome note";
+      shapeNote.textContent = text.letterShape;
       var note = document.createElement("p");
       note.className = "chrome note";
       note.textContent = text.letterChoose;
@@ -337,10 +359,10 @@ function doonfAlphabet(lang) {
       choices.forEach(function (choice, i) {
         var card = document.createElement("a");
         card.className = "card";
-        card.href = "#" + encodeURIComponent(view.letter) + "/" + i;
+        card.href = doonfLetterHash(view.letter, i, view.style);
         var mini = document.createElement("div");
         mini.className = "mini";
-        mini.innerHTML = doonfAlphabetSvg(view.letter, choice.icon, choice.word);
+        mini.innerHTML = doonfAlphabetSvg(view.letter, choice.icon, choice.word, view.style);
         var title = document.createElement("h2");
         title.textContent = choice.word;
         card.appendChild(mini);
@@ -348,6 +370,8 @@ function doonfAlphabet(lang) {
         list.appendChild(card);
       });
       root.appendChild(intro);
+      root.appendChild(shapeNote);
+      root.appendChild(styleBar(view));
       root.appendChild(note);
       root.appendChild(list);
       return;
@@ -366,10 +390,10 @@ function doonfAlphabet(lang) {
     var pager = document.createElement("nav");
     pager.className = "pager";
     var prevLink = document.createElement("a");
-    prevLink.href = "#" + encodeURIComponent(prevLetter) + "/" + view.index;
+    prevLink.href = doonfLetterHash(prevLetter, view.index, view.style);
     prevLink.textContent = "← " + prevLetter;
     var nextLink = document.createElement("a");
-    nextLink.href = "#" + encodeURIComponent(nextLetter) + "/" + view.index;
+    nextLink.href = doonfLetterHash(nextLetter, view.index, view.style);
     nextLink.textContent = nextLetter + " →";
     pager.appendChild(prevLink);
     pager.appendChild(nextLink);
@@ -380,7 +404,7 @@ function doonfAlphabet(lang) {
     facts.textContent = text.letterLabel + " " + view.letter;
     var frame = document.createElement("div");
     frame.className = "frame";
-    frame.innerHTML = doonfAlphabetSvg(view.letter, icon, word);
+    frame.innerHTML = doonfAlphabetSvg(view.letter, icon, word, view.style);
     var button = document.createElement("button");
     button.type = "button";
     button.className = "print";
@@ -394,6 +418,7 @@ function doonfAlphabet(lang) {
     wrap.appendChild(frame);
     wrap.appendChild(button);
     outer.appendChild(wrap);
+    root.appendChild(styleBar(view));
     root.appendChild(outer);
   }
 
